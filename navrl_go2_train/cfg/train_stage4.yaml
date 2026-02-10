@@ -1,0 +1,47 @@
+defaults:
+  - _self_
+  - go2
+  - ppo
+  - sim
+
+headless: True
+device: "cuda:0"
+seed: 0
+
+num_envs: 2200
+max_episode_length: 3500
+sim_dt: 0.005
+decimation: 4
+
+max_frame_num: 12e8
+eval_interval: 1000
+save_interval: 1000
+
+env:
+  num_envs: ${num_envs}
+  max_episode_length: ${max_episode_length}
+  env_spacing: 8.0
+  num_obstacles: 50
+  
+  map_range: [ 25.0, 25.0, 4.5 ]
+
+env_dyn:
+  num_obstacles: 80
+  vel_range: [ 0.5, 1.5 ]
+  local_range: [ 3.0, 3.0 ]
+  spawn_range: [ 15.0, 15.0 ]
+  enable_visualization: true
+  max_obs_width: 1.0
+  max_obs_height: 2.0
+
+viewer:
+  eye: [ 0., 40., 40. ]
+  lookat: [ 0., 2.5, 0. ]
+  resolution: [ 960, 720 ]
+
+wandb:
+  project: go2_navrl
+  name: curriculum_stage4_full
+  entity: null
+  mode: online
+  run_id: null

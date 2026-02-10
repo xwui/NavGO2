@@ -1,0 +1,14 @@
+go2:
+  model_name: "unitree_go2"
+
+sensor:
+  lidar_range: 4.0
+  lidar_vfov: [ -10, 20 ]
+  lidar_vbeams: 4
+  lidar_hres: 10.0
+  lidar_hbeams: 36
+
+limits:
+  vx_max: 1.0
+  vy_max: 0.2
+  yaw_rate_max: 0.5        # rad/s
